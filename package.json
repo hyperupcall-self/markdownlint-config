@@ -1,19 +1,30 @@
 {
 	"name": "@hyperupcall/markdownlint-config",
 	"version": "0.3.2",
-	"exports": {
-		"import": "./.markdownlint.mjs",
-		"require": "./.markdownlint.cjs"
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hyperupcall-self/markdownlint-config"
 	},
+	"bugs": {
+		"url": "https://github.com/hyperupcall-self/markdownlint-config/issues"
+	},
+	"author": "Edwin Kofler <edwin@kofler.dev> (https://edwinkofler.com)",
+	"private": false,
+	"packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48",
+	"main": "./index.js",
+	"files": [
+		".markdownlint.json"
+	],
 	"scripts": {
-		"lint": "eslint"
+		"format": "hyperupcall-scripts-nodejs format",
+		"lint": "hyperupcall-scripts-nodejs lint"
 	},
 	"devDependencies": {
-		"@hyperupcall/eslint-config": "^0.6.0",
-		"@hyperupcall/prettier-config": "^0.7.0",
-		"eslint": "^8.54.0",
-		"eslint-config-prettier": "^9.0.0",
-		"prettier": "^3.1.0",
-		"prettier-plugin-pkg": "^0.18.0"
-	}
+		"@hyperupcall/scripts-nodejs": "0.7.1"
+	},
+	"markdownlint-cli2": {
+		"extends": "./node_modules/@hyperupcall/markdownlint-config/.markdownlint.json"
+	},
+	"prettier": "@hyperupcall/scripts-nodejs/config-prettier.js"
 }
